@@ -5,9 +5,9 @@ Django-AppCMS is a extention for django-cms that adds templatetags for inserting
 django-cms >= 2.1
 
 ## Installation
-Django-AppCMS can be installed with pip directly from github. It's currently not added to the pypi index.
-		
-	pip install git+git://github.com/CodeMill/django-appcms.git
+Django-AppCMS can be installed with pip:
+
+	pip install django-appcms
 
 ## Usage
 - Add appcms to INSTALLED\_APPS in your settings.py file:
