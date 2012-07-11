@@ -10,7 +10,7 @@ django-cms
 		INSTALLED_APPS = (
 			...
 			'appcms',
-			'''
+			...
 		)
 
 - Run ./manage.py syncdb to add tables for django-appcms
