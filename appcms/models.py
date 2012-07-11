@@ -5,5 +5,5 @@ class Placeholder(models.Model):
     placeholder = PlaceholderField('appcms_placeholder')
     name = models.CharField(max_length=300)
 
-    def __unicode__():
+    def __unicode__(self):
         return self.name
