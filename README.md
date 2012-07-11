@@ -7,7 +7,7 @@ django-cms >= 2.1
 ## Installation
 Django-AppCMS can be installed with pip directly from github. It's currently not added to the pypi index.
 		
-		 pip install git+git://github.com/CodeMill/django-appcms.git
+	pip install git+git://github.com/CodeMill/django-appcms.git
 
 ## Usage
 - Add appcms to INSTALLED\_APPS in your settings.py file:
