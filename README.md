@@ -2,7 +2,7 @@
 Django-AppCMS is a extention for django-cms that adds templatetags for inserting django-cms placeholders in app templates. It enables front end editing of content in your apps.
 
 ## Requirements
-django-cms
+django-cms >= 2.1
 
 ## Usage
 - Add appcms to INSTALLED\_APPS in your settings.py file:
