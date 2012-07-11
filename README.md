@@ -1,5 +1,5 @@
 # django-appcms
-Templatetags for inserting django-cms placeholders in app templates. Enables front end editing of content in your apps.
+Django-AppCMS is a extention for django-cms that adds templatetags for inserting django-cms placeholders in app templates. It enables front end editing of content in your apps.
 
 ## Requirements
 django-cms
@@ -12,6 +12,8 @@ django-cms
 			'appcms',
 			'''
 		)
+
+- Run ./manage.py syncdb to add tables for django-appcms
 
 - Load appcms\_tags in your template:
 
