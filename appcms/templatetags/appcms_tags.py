@@ -20,5 +20,6 @@ class RenderPlaceholder(Tag):
             return ''
 
         placeholder, created = Placeholder.objects.get_or_create(name=name)
+        placeholder.placeholder.slot = name
         return safe(placeholder.placeholder.render(context, width))
 register.tag(RenderPlaceholder)
