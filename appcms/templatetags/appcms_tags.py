@@ -4,6 +4,8 @@ from classytags.core import Tag, Options
 from django.template.defaultfilters import safe
 from django.core.cache import cache
 from ..models import Placeholder
+import hashlib
+
 register = template.Library()
 
 class RenderPlaceholder(Tag):
@@ -27,12 +29,15 @@ class RenderPlaceholder(Tag):
             return ''
         
         if not request.user.is_staff:
-            cached = cache.get('placeholder-%s' % name)
+            m = hashlib.md5()
+            m.update(name)
+            key = 'placeholder-%s' % m.hexdigest()
+            cached = cache.get(key)
             if cached:
                 return cached
             else:
                 resp = _get_placeholder(name, context, width) 
-                cache.set('placeholder-%s' % name, resp, 60)
+                cache.set(key, resp, 60)
                 return resp
 
         return _get_placeholder(name, context, width) 
