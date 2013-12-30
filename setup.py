@@ -11,6 +11,6 @@ setup(
     url = 'http://github.com/codemill/django-appcms',
     packages = find_packages(),
     install_requires = [
-        'django-cms>=2.1',
+        'django-cms>=2.4',
     ],
 )

@@ -8,6 +8,7 @@ import hashlib
 
 register = template.Library()
 
+
 class RenderPlaceholder(Tag):
     name = 'appcms_placeholder'
     options = Options(
@@ -23,11 +24,9 @@ class RenderPlaceholder(Tag):
             return safe(placeholder.placeholder.render(context, width))
 
         request = context.get('request', None)
-        if not request:
+        if not request or not name:
             return ''
-        if not name:
-            return ''
-        
+
         if not request.user.is_staff:
             m = hashlib.md5()
             m.update(name)
@@ -36,9 +35,9 @@ class RenderPlaceholder(Tag):
             if cached:
                 return cached
             else:
-                resp = _get_placeholder(name, context, width) 
+                resp = _get_placeholder(name, context, width)
                 cache.set(key, resp, 60)
                 return resp
 
-        return _get_placeholder(name, context, width) 
+        return _get_placeholder(name, context, width)
 register.tag(RenderPlaceholder)
